@@ -1,11 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
 html,
-body {
-  padding: 0;
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -13,4 +130,54 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+/* clearfix */
+.clearfix:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+/* wrapper */
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* header */
+header {
+  padding: 10px 0;
+}
+header .header_wrap {
+  max-width: 1200px;
+  margin: auto;
+}
+header h1 {
+  float: left;
+}
+header .gnb {
+  float: right;
+}
+header .gnb .depth_1 {
+  display: flex;
+}
+header .gnb .depth_1 li {
+  font-size: 20px;
+}
+header .gnb .depth_1 li + li {
+  margin-left: 1rem;
+}
+/* footer */
+footer {
+  background: rgb(49, 49, 49);
+  color: #fff;
+  padding: 30px 0;
+  font-size: 14px;
 }
