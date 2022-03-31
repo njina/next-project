@@ -20,7 +20,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="#">
+              <Link href="/src/notice">
                 <a>공지사항</a>
               </Link>
             </li>

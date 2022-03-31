@@ -1,0 +1,25 @@
+.subpage_tit {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 36px;
+}
+
+.boardpage_wrap {
+  padding: 60px 0;
+}
+.bd_list {
+  border-top: 2px solid rgb(195, 7, 7);
+}
+.bd_list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 20px 0;
+}
+.bd_list .title {
+  font-size: 18px;
+}
+.bd_list .date {
+  color: #888;
+  margin-bottom: 10px;
+}
