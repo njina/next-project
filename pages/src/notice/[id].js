@@ -22,7 +22,7 @@ export default function Notice({ data }) {
 
 export async function getServerSideProps(context) {
   let { id } = context.query;
-  const baseApiUrl = "http://localhost:1337";
+  const baseApiUrl = "https://boiling-cliffs-98317.herokuapp.com";
   const res = await fetch(`${baseApiUrl}/api/notices`);
   const data = await res.json();
 
