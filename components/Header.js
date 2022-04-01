@@ -15,7 +15,7 @@ const Header = () => {
         <nav className="gnb">
           <ul className="depth_1">
             <li>
-              <Link href="#">
+              <Link href="/src/livingroom">
                 <a>거실</a>
               </Link>
             </li>
