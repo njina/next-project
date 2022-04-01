@@ -6,15 +6,29 @@ import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 
 export default function Notice({ data }) {
-  //console.log(data);
-  const attr0 = data.data[0].attributes;
-  const attr1 = data.data[1].attributes;
-  //console.log(attr0);
+  // console.log(data);
+  const keyId = data.data.id;
+  const thisAttr = data.data.attributes;
+  // console.log(thisAttr);
 
   return (
     <>
       <Header />
-      아직 아무것도 없는 게 정상입니다.
+      <div className={styles.boardpage_wrap}>
+        <div className="wrapper">
+          <div className={styles.bd_view}>
+            <p className={styles.title}>{thisAttr.title}</p>
+            <p className={styles.date}>{thisAttr.date}</p>
+            <div className={styles.content}>{thisAttr.content}</div>
+          </div>
+
+          <div className={styles.btn_wrap}>
+            <Link href="#">
+              <a className={styles.btn}>목록</a>
+            </Link>
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );
@@ -23,7 +37,7 @@ export default function Notice({ data }) {
 export async function getServerSideProps(context) {
   let { id } = context.query;
   const baseApiUrl = "https://boiling-cliffs-98317.herokuapp.com";
-  const res = await fetch(`${baseApiUrl}/api/notices`);
+  const res = await fetch(`${baseApiUrl}/api/notices/${id}`);
   const data = await res.json();
 
   return {

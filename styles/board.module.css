@@ -7,6 +7,8 @@
 .boardpage_wrap {
   padding: 60px 0;
 }
+
+/* list page */
 .bd_list {
   border-top: 2px solid rgb(195, 7, 7);
 }
@@ -21,4 +23,26 @@
 }
 .bd_list .date {
   color: #888;
+}
+
+/* view page */
+.bd_view .title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.bd_view .date {
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.btn_wrap {
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.btn_wrap .btn {
+  padding: 10px 20px;
+  border: 1px solid #dfdfdf;
+  background: #dfdfdf;
 }
