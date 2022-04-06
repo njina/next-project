@@ -26,6 +26,11 @@ export default function Home({ gnbData }) {
         <p>title : {gnbData[2].title}</p>
         <a href={gnbData[2].path}>경로로 이동 - {gnbData[2].path}</a>
       </div>
+      <div>
+        <p>id : {gnbData[3].id}</p>
+        <p>title : {gnbData[3].title}</p>
+        <a href={gnbData[3].path}>경로로 이동 - {gnbData[3].path}</a>
+      </div>
 
       <Header />
       <MainBanner />
