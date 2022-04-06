@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Router from "next/router";
 import styles from "../../../styles/board.module.css";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
@@ -24,7 +25,9 @@ export default function Notice({ data }) {
 
           <div className={styles.btn_wrap}>
             <Link href="#">
-              <a className={styles.btn}>목록</a>
+              <a className={styles.btn} title="게시글 목록보기" onClick={() => Router.back()}>
+                목록
+              </a>
             </Link>
           </div>
         </div>

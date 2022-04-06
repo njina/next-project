@@ -6,7 +6,9 @@ import Footer from "../components/Footer";
 import MainBanner from "../components/MainBanner";
 import MainContents from "../components/MainContents";
 
-export default function Home() {
+export default function Home({}) {
+  // console.log(gnbData);
+
   return (
     <>
       <Header />

@@ -13,16 +13,41 @@
   border-top: 2px solid rgb(195, 7, 7);
 }
 .bd_list li {
-  display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid #dfdfdf;
-  padding: 20px 0;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  line-height: 50px;
 }
+.bd_list li .category {
+  float: left;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 40px;
+  background: #888;
+  color: #fff;
+  margin-right: 20px;
+}
+.bd_list li .category.news {
+  background: rgb(209, 41, 41);
+}
+.bd_list li .category.event {
+  background: rgb(250, 161, 28);
+}
+.bd_list li .category.press {
+  background: rgb(17, 168, 155);
+}
+
 .bd_list .title {
+  float: left;
   font-size: 18px;
 }
 .bd_list .date {
+  float: right;
   color: #888;
+}
+.bd_list li.on {
+  background: #efefef;
 }
 
 /* view page */

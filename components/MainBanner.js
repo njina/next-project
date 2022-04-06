@@ -2,26 +2,29 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
-import { Controller } from "swiper";
+import { Controller, EffectFade } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/controller";
+import "swiper/css/effect-fade";
 
 const MainBanner = () => {
   const [controlledSwiper, setControlledSwiper] = useState(null);
 
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, Controller]}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, Controller, EffectFade]}
       spaceBetween={50}
       slidesPerView={1}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      autoplay={{ delay: 2000 }}
+      autoplay={{ delay: 3000 }}
       controller={{ control: controlledSwiper }}
+      navigation={true}
+      effect="fade"
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
