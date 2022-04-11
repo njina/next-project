@@ -25,8 +25,8 @@ const MainBanner = () => {
       controller={{ control: controlledSwiper }}
       navigation={true}
       effect="fade"
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log("slide change")}
+      // onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
         <Image src="/images/mainbanner_1.jpg" alt="메인비주얼" width="1913" height="790" />
