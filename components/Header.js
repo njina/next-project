@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Header = ({}) => {
+const Header = ({ menuData }) => {
+  console.log(menuData);
+
   return (
     <header>
       <div className="header_wrap clearfix">
@@ -14,14 +16,37 @@ const Header = ({}) => {
         </h1>
         <nav className="gnb">
           <ul className="depth_1">
-            {/* {gnbData &&
-              gnbData.data.map((menu) => {
-                <li key={menu.id}>
-                  <p>{menu.attributes.name}</p>
-                  <p>{menu.attributes.url}</p>
-                </li>;
-              })} */}
-            <li>
+            {menuData &&
+              menuData
+                .filter((menu) => menu.menuAttached === true) //메뉴숨김여부
+                .filter((menu) => menu.parent === null) //1차메뉴일때
+                .sort((a, b) => {
+                  //메뉴 순서 정렬
+                  return a.order - b.order;
+                })
+                .map((menu) => {
+                  if (menu.type === "INTERNAL") {
+                    return (
+                      <li key={menu.id}>
+                        <Link href={`/${menu.path}`}>
+                          <a title="해당 페이지로 이동">{menu.title}</a>
+                        </Link>
+                      </li>
+                    );
+                  } else if (menu.type === "EXTERNAL") {
+                    return (
+                      <li key={menu.id}>
+                        <Link href={`${menu.externalPath}`}>
+                          <a title="해당 사이트로 이동" target="_blank">
+                            {menu.title}
+                          </a>
+                        </Link>
+                      </li>
+                    );
+                  }
+                })}
+
+            {/* <li>
               <Link href="/src/livingroom">
                 <a title="해당 페이지로 이동">거실</a>
               </Link>
@@ -40,7 +65,7 @@ const Header = ({}) => {
               <Link href="#">
                 <a title="해당 페이지로 이동">고객문의</a>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>
