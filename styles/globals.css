@@ -150,6 +150,10 @@ li {
   max-width: 1200px;
   margin: auto;
 }
+.sub-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
 
 /* header */
 header {
@@ -186,6 +190,9 @@ footer {
 }
 
 /* subpage */
+.content_wrap {
+  padding: 1.5em 0;
+}
 .subpage_tit {
   font-size: 36px;
   font-weight: 700;

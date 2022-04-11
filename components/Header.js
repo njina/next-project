@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header = ({ menuData }) => {
   console.log(menuData);
-  console.log(menuData.filter((menu) => menu.parent !== null));
+  //console.log(menuData.filter((menu) => menu.parent !== null));
 
   return (
     <header>
