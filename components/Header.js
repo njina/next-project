@@ -3,13 +3,14 @@ import Image from "next/image";
 
 const Header = ({ menuData }) => {
   console.log(menuData);
+  console.log(menuData.filter((menu) => menu.parent !== null));
 
   return (
     <header>
       <div className="header_wrap clearfix">
         <h1>
           <Link href="/">
-            <a>
+            <a title="사이트 최상단으로 이동">
               <Image src="/images/logo.png" alt="일룸" width="85" height="23" />
             </a>
           </Link>
@@ -45,6 +46,12 @@ const Header = ({ menuData }) => {
                     );
                   }
                 })}
+
+            {menuData &&
+              menuData
+                .filter((menu) => menu.menuAttached === true)
+                .filter((menu) => menu.parent !== null)
+                .map((menu) => <div key={menu.id}>{menu.title}</div>)}
 
             {/* <li>
               <Link href="/src/livingroom">
