@@ -2,14 +2,15 @@ import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import NoticeList from "../../components/Notice/NoticeList";
+import baseApiUrl from "../../utils/baseApiUrl";
 
-export default function Notice({ postData }) {
+export default function Notice({ menuData, postData }) {
   // console.log(postData.data);
   // const posts = postData.data.attributes;
 
   return (
     <>
-      <Header />
+      <Header menuData={menuData} />
       <NoticeList postData={postData} />
       <Footer />
     </>
@@ -17,13 +18,16 @@ export default function Notice({ postData }) {
 }
 
 export async function getServerSideProps(context) {
+  const menuRes = await fetch(`${baseApiUrl}/api/navigation/render/1?type=FLAT`);
+  const menuData = await menuRes.json();
+
   let { id } = context.query;
-  const baseApiUrl = "https://boiling-cliffs-98317.herokuapp.com";
   const postRes = await fetch(`${baseApiUrl}/api/notices`);
   const postData = await postRes.json();
 
   return {
     props: {
+      menuData,
       postData,
     }, // will be passed to the page component as props
   };

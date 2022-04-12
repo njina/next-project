@@ -5,16 +5,17 @@ import Router from "next/router";
 import styles from "../../../styles/board.module.css";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
+import baseApiUrl from "../../../utils/baseApiUrl";
 
-export default function Notice({ data }) {
-  // console.log(data);
-  const keyId = data.data.id;
-  const thisAttr = data.data.attributes;
+export default function Notice({ menuData, postData }) {
+  // console.log(postData);
+  const keyId = postData.data.id;
+  const thisAttr = postData.data.attributes;
   // console.log(thisAttr);
 
   return (
     <>
-      <Header />
+      <Header menuData={menuData} />
       <div className={styles.boardpage_wrap}>
         <div className="wrapper">
           <div className={styles.bd_view}>
@@ -26,7 +27,7 @@ export default function Notice({ data }) {
 
           <div className={styles.btn_wrap}>
             <Link href="#">
-              <a className={styles.btn} title="게시글 목록보기" onClick={() => Router.back()}>
+              <a className={styles.btn} title="목록보기" onClick={() => Router.back()}>
                 목록
               </a>
             </Link>
@@ -39,14 +40,17 @@ export default function Notice({ data }) {
 }
 
 export async function getServerSideProps(context) {
+  const menuRes = await fetch(`${baseApiUrl}/api/navigation/render/1?type=FLAT`);
+  const menuData = await menuRes.json();
+
   let { id } = context.query;
-  const baseApiUrl = "https://boiling-cliffs-98317.herokuapp.com";
-  const res = await fetch(`${baseApiUrl}/api/notices/${id}`);
-  const data = await res.json();
+  const postRes = await fetch(`${baseApiUrl}/api/notices/${id}`);
+  const postData = await postRes.json();
 
   return {
     props: {
-      data,
+      menuData,
+      postData,
     }, // will be passed to the page component as props
   };
 }
