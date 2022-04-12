@@ -20,7 +20,8 @@ export default function Notice({ data }) {
           <div className={styles.bd_view}>
             <p className={styles.title}>{thisAttr.title}</p>
             <p className={styles.date}>{thisAttr.date}</p>
-            <div className={styles.content}>{thisAttr.content}</div>
+            {/* <div className={styles.content}>{thisAttr.content}</div> */}
+            <div className={styles.content} dangerouslySetInnerHTML={{ __html: thisAttr.content }} />
           </div>
 
           <div className={styles.btn_wrap}>

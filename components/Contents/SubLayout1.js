@@ -7,9 +7,7 @@ const SubLayout1 = ({ contData }) => {
     <div className="sub-wrapper">
       <div className="content_wrap">
         <p className="subpage_tit">{contData.data.attributes.title}</p>
-        {/* <div>{contData.data.attributes.content}</div> */}
-
-        <div dangerouslySetInnerHTML={{ __html: contData.data.attributes.content }} />
+        <div dangerouslySetInnerHTML={{ __html: contData.data.attributes.content }}></div>
       </div>
     </div>
   );
