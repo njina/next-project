@@ -17,7 +17,7 @@ const Header = ({ menuData }) => {
         </h1>
         <nav className="gnb">
           <ul className="depth_1">
-            {menuData &&
+            {/* {menuData &&
               menuData
                 .filter((menu) => menu.menuAttached === true) //메뉴숨김여부
                 .filter((menu) => menu.parent === null) //1차메뉴일때
@@ -47,11 +47,7 @@ const Header = ({ menuData }) => {
                   }
                 })}
 
-            {menuData &&
-              menuData
-                .filter((menu) => menu.menuAttached === true)
-                .filter((menu) => menu.parent !== null)
-                .map((menu) => <div key={menu.id}>{menu.title}</div>)}
+            {menuData && menuData.filter((menu) => menu.parent !== null).map((menu) => <div key={menu.id}>{menu.title}</div>)} */}
 
             {/* <li>
               <Link href="/src/livingroom">

@@ -7,7 +7,7 @@ import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import baseApiUrl from "../../../utils/baseApiUrl";
 
-export default function Notice({ menuData, postData }) {
+export default function Notice({ postData }) {
   // console.log(postData);
   const keyId = postData.data.id;
   const thisAttr = postData.data.attributes;
@@ -15,7 +15,7 @@ export default function Notice({ menuData, postData }) {
 
   return (
     <>
-      <Header menuData={menuData} />
+      <Header />
       <div className={styles.boardpage_wrap}>
         <div className="wrapper">
           <div className={styles.bd_view}>
@@ -40,8 +40,8 @@ export default function Notice({ menuData, postData }) {
 }
 
 export async function getServerSideProps(context) {
-  const menuRes = await fetch(`${baseApiUrl}/api/navigation/render/1?type=FLAT`);
-  const menuData = await menuRes.json();
+  // const menuRes = await fetch(`${baseApiUrl}/api/navigation/render/1?type=FLAT`);
+  // const menuData = await menuRes.json();
 
   let { id } = context.query;
   const postRes = await fetch(`${baseApiUrl}/api/notices/${id}`);
@@ -49,7 +49,6 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      menuData,
       postData,
     }, // will be passed to the page component as props
   };

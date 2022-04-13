@@ -6,10 +6,12 @@ import Footer from "../components/Footer";
 import MainBanner from "../components/MainBanner";
 import MainContents from "../components/MainContents";
 
-export default function Home({ menuData }) {
+export default function Home({}) {
+  //console.log(menuData);
+
   return (
     <>
-      <Header menuData={menuData} />
+      <Header />
       <MainBanner />
       <MainContents />
       <Footer />
@@ -19,13 +21,13 @@ export default function Home({ menuData }) {
 
 export async function getServerSideProps(context) {
   let { id } = context.query;
-  const baseApiUrl = "https://boiling-cliffs-98317.herokuapp.com";
-  const menuRes = await fetch(`${baseApiUrl}/api/navigation/render/1?type=FLAT`);
-  const menuData = await menuRes.json();
+
+  // const menuRes = await fetch(`${baseApiUrl}/api/menus?nested`);
+  // const menuData = await menuRes.json();
 
   return {
     props: {
-      menuData,
+      // menuData,
     }, // will be passed to the page component as props
   };
 }
