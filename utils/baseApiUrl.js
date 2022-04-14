@@ -1,3 +1,3 @@
-const baseApiUrl = process.env.NODE_ENV === "production" ? "https://boiling-cliffs-98317.herokuapp.com" : "https://boiling-cliffs-98317.herokuapp.com";
+const baseApiUrl = process.env.NODE_ENV === "production" ? "https://intense-waters-76568.herokuapp.com" : "https://intense-waters-76568.herokuapp.com";
 
 export default baseApiUrl;
