@@ -5,13 +5,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MainBanner from "../components/MainBanner";
 import MainContents from "../components/MainContents";
+import baseApiUrl from "../utils/baseApiUrl";
 
-export default function Home({}) {
+export default function Home({ menuData }) {
   //console.log(menuData);
 
   return (
     <>
-      <Header />
+      <Header menuData={menuData} />
       <MainBanner />
       <MainContents />
       <Footer />
@@ -22,12 +23,12 @@ export default function Home({}) {
 export async function getServerSideProps(context) {
   let { id } = context.query;
 
-  // const menuRes = await fetch(`${baseApiUrl}/api/menus?nested`);
-  // const menuData = await menuRes.json();
+  const menuRes = await fetch(`${baseApiUrl}/api/menus?nested`);
+  const menuData = await menuRes.json();
 
   return {
     props: {
-      // menuData,
+      menuData,
     }, // will be passed to the page component as props
   };
 }

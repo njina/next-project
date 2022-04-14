@@ -1,8 +1,7 @@
-import Link from "next/link";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import NoticeList from "../../components/Notice/NoticeList";
-import baseApiUrl from "../../utils/baseApiUrl";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import NoticeList from "../components/Notice/NoticeList";
+import baseApiUrl from "../utils/baseApiUrl";
 
 export default function Notice({ menuData, postData }) {
   // console.log(postData.data);
@@ -18,7 +17,7 @@ export default function Notice({ menuData, postData }) {
 }
 
 export async function getServerSideProps(context) {
-  const menuRes = await fetch(`${baseApiUrl}/api/navigation/render/1?type=FLAT`);
+  const menuRes = await fetch(`${baseApiUrl}/api/menus?nested`);
   const menuData = await menuRes.json();
 
   let { id } = context.query;

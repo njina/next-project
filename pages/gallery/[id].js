@@ -2,10 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
-import styles from "../../../styles/board.module.css";
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
-import baseApiUrl from "../../../utils/baseApiUrl";
+import styles from "../../styles/board.module.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import baseApiUrl from "../utils/baseApiUrl";
 
 export default function Notice({ postData }) {
   console.log(postData);
@@ -24,8 +24,8 @@ export default function Notice({ postData }) {
 }
 
 export async function getServerSideProps(context) {
-  // const menuRes = await fetch(`${baseApiUrl}/api/navigation/render/1?type=FLAT`);
-  // const menuData = await menuRes.json();
+  const menuRes = await fetch(`${baseApiUrl}/api/menus?nested`);
+  const menuData = await menuRes.json();
 
   let { id } = context.query;
   const postRes = await fetch(`${baseApiUrl}/api/galleries?populate=*`);

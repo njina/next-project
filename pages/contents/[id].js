@@ -1,7 +1,7 @@
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
-import SubLayout1 from "../../../components/Contents/SubLayout1";
-import baseApiUrl from "../../../utils/baseApiUrl";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import SubLayout1 from "../../components/Contents/SubLayout1";
+import baseApiUrl from "../../utils/baseApiUrl";
 
 export default function Contents({ menuData, contData }) {
   return (
@@ -16,7 +16,7 @@ export default function Contents({ menuData, contData }) {
 export async function getServerSideProps(context) {
   let { id } = context.query;
 
-  const menuRes = await fetch(`${baseApiUrl}/api/navigation/render/1?type=FLAT`);
+  const menuRes = await fetch(`${baseApiUrl}/api/menus?nested`);
   const menuData = await menuRes.json();
 
   const contRes = await fetch(`${baseApiUrl}/api/content`);
