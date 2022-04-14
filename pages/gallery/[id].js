@@ -5,7 +5,7 @@ import Router from "next/router";
 import styles from "../../styles/board.module.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import baseApiUrl from "../utils/baseApiUrl";
+import baseApiUrl from "../../utils/baseApiUrl";
 
 export default function Notice({ postData }) {
   console.log(postData);

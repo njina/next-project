@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
-import styles from "../../../styles/board.module.css";
+import styles from "../../styles/board.module.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import baseApiUrl from "../../utils/baseApiUrl";
