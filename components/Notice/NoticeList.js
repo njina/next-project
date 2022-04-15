@@ -20,7 +20,7 @@ const NoticeList = ({ postData }) => {
             postData.data.map((post) => (
               <li key={post.id} className="clearfix" onMouseEnter={changeBg} onMouseLeave={defaultBg}>
                 <p className={styles.category}>{post.attributes.category}</p>
-                <Link href={`/src/notice/${post.id}`}>
+                <Link href={`/notice/${post.id}`}>
                   <a title="게시글 상세보기">
                     <p className={styles.title}>{post.attributes.title}</p>
                   </a>
