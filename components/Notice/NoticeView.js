@@ -5,7 +5,7 @@ const NoticeView = ({ postData }) => {
   // console.log(postData);
   const keyId = postData.data.id;
   const thisAttr = postData.data.attributes;
-  //console.log(thisAttr);
+  // console.log(thisAttr);
 
   function changeBg(e) {
     e.target.style.background = "#ededed";
