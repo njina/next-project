@@ -71,3 +71,29 @@
   border: 1px solid #dfdfdf;
   background: #dfdfdf;
 }
+
+/* gallery list page */
+.bd_gallerylist {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3em 1em;
+}
+
+.bd_gallerylist li .thumb {
+}
+.bd_gallerylist li .thumb img {
+  max-width: 100%;
+}
+.bd_gallerylist li .bd_tit {
+  padding: 0 0.1em;
+  box-sizing: border-box;
+  font-size: 0.9em;
+}
+.bd_galleryview .img_wrap {
+}
+.bd_galleryview .bd_tit {
+  line-height: 2.5;
+  font-size: 1.5em;
+}
+.bd_galleryview .bd_content {
+}
