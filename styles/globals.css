@@ -169,16 +169,17 @@ header h1 {
 header .gnb {
   float: right;
 }
-header .gnb .depth_1 {
+header .gnb dl {
   display: flex;
 }
-header .gnb .depth_1 li {
+
+header .gnb .depth_1 {
   font-size: 20px;
 }
-header .gnb .depth_1 li + li {
+header .gnb .depth_1 + .depth_1 {
   margin-left: 1rem;
 }
-header .gnb .depth_1 li a:hover {
+header .gnb .depth_1 a:hover {
   color: #c8091e;
 }
 /* footer */

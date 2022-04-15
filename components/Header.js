@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Header = ({ menuData }) => {
-  //console.log(menuData);
+  // console.log(menuData);
+  console.log(menuData.menus[0].items[0].children);
 
   return (
     <header>
@@ -15,31 +16,29 @@ const Header = ({ menuData }) => {
           </Link>
         </h1>
         <nav className="gnb">
-          <ul className="depth_1">
+          <dl>
             {menuData &&
               menuData.menus[0].items.map((menu) => {
-                if (menu.target === "_self") {
-                  return (
-                    <li key={menu.id}>
+                return (
+                  <>
+                    <dt key={menu.id} className="depth_1">
                       <Link href={menu.url}>
                         <a title="해당 페이지로 이동">{menu.title}</a>
                       </Link>
-                    </li>
-                  );
-                }
-                if (menu.target === "_blank") {
-                  return (
-                    <li key={menu.id}>
-                      <Link href={menu.url}>
-                        <a title="해당 페이지 새창으로 열기" target="_blank">
-                          {menu.title}
-                        </a>
-                      </Link>
-                    </li>
-                  );
-                }
+                    </dt>
+                    {/* <dd>
+                      <ul className="depth_2">
+                        <li>
+                          <Link href={menu.url}>
+                            <a title="해당 페이지로 이동">메뉴</a>
+                          </Link>
+                        </li>
+                      </ul>
+                    </dd> */}
+                  </>
+                );
               })}
-          </ul>
+          </dl>
         </nav>
       </div>
     </header>
