@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Router from "next/router";
 import Image from "next/image";
 
 const Header = ({ menuData }) => {
-  // console.log(menuData);
-  console.log(menuData.menus[0].items[0].children);
+  console.log(menuData);
+  //console.log(menuData.menus[0].items[0]);
 
   return (
     <header>
@@ -16,29 +17,32 @@ const Header = ({ menuData }) => {
           </Link>
         </h1>
         <nav className="gnb">
-          <dl>
-            {menuData &&
-              menuData.menus[0].items.map((menu) => {
-                return (
-                  <>
-                    <dt key={menu.id} className="depth_1">
-                      <Link href={menu.url}>
-                        <a title="해당 페이지로 이동">{menu.title}</a>
-                      </Link>
-                    </dt>
-                    {/* <dd>
-                      <ul className="depth_2">
-                        <li>
-                          <Link href={menu.url}>
-                            <a title="해당 페이지로 이동">메뉴</a>
-                          </Link>
-                        </li>
-                      </ul>
-                    </dd> */}
-                  </>
-                );
-              })}
-          </dl>
+          {menuData &&
+            menuData.menus[0].items.map((menu) => {
+              return (
+                <dl key={menu.id}>
+                  <dt className="depth_1">
+                    <Link href={menu.url}>
+                      <a title="해당 페이지로 이동">{menu.title}</a>
+                    </Link>
+                  </dt>
+                  <dd>
+                    <ul className="depth_2">
+                      <li>
+                        {/* <Link href={menu.children[0].url}>
+                          <a title="해당 페이지로 이동">메뉴</a>
+                        </Link> */}
+                        {/* <p>{menu.children[0].title}</p> */}
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+              );
+            })}
+          <p>
+            {menuData.menus[0].items[0].children[0].title},{menuData.menus[0].items[0].children[0].url}
+          </p>
+          <p>{menuData.menus[0].items[0].children[1].title}</p>
         </nav>
       </div>
     </header>
