@@ -1,5 +1,5 @@
 import GalleryList from "../../components/Gallery/GalleryList";
-import baseApiUrl from "../utils/baseApiUrl";
+import baseApiUrl from "../../utils/baseApiUrl";
 
 export default function Gallery({ postData }) {
   console.log(postData);
