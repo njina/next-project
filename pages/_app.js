@@ -2,8 +2,8 @@ import "../styles/globals.css";
 import Layout from "../components/_App/Layout";
 import baseApiUrl from "../utils/baseApiUrl";
 
-function MyApp({ Component, menuData, ...pageProps }) {
-  console.log(menuData);
+function MyApp({ Component, menuData, pageProps }) {
+  //console.log(menuData);
 
   return (
     <Layout menuData={menuData}>

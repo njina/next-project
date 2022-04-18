@@ -1,23 +1,22 @@
-import GalleryList from "../components/Gallery/GalleryList";
+import NoticeList from "../components/Notice/NoticeList";
 import baseApiUrl from "../utils/baseApiUrl";
 
-export default function Gallery({ postData }) {
-  console.log("-=============-");
-  console.log(postData);
+export default function Notice({ postData }) {
+  // console.log(postData.data);
   // const posts = postData.data.attributes;
 
   return (
     <>
-      <GalleryList postData={postData} />
+      <NoticeList postData={postData} />
     </>
   );
 }
 
 export async function getServerSideProps(context) {
   let { id } = context.query;
-  const postRes = await fetch(`${baseApiUrl}/api/galleries?populate=*`);
+  const postRes = await fetch(`${baseApiUrl}/api/notices`);
   const postData = await postRes.json();
-  console.log(postData);
+
   return {
     props: {
       postData,
