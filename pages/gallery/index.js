@@ -1,8 +1,7 @@
-import GalleryList from "../components/Gallery/GalleryList";
+import GalleryList from "../../components/Gallery/GalleryList";
 import baseApiUrl from "../utils/baseApiUrl";
 
 export default function Gallery({ postData }) {
-  console.log("-=============-");
   console.log(postData);
   // const posts = postData.data.attributes;
 

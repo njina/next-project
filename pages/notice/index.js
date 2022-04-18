@@ -1,4 +1,4 @@
-import NoticeList from "../components/Notice/NoticeList";
+import NoticeList from "../../components/Notice/NoticeList";
 import baseApiUrl from "../utils/baseApiUrl";
 
 export default function Notice({ postData }) {
