@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "../../styles/board.module.css";
 
 const NoticeList = ({ postData }) => {
-  console.log(postData.data);
+  //console.log(postData.data);
 
   function changeBg(e) {
     e.target.style.background = "#ededed";
